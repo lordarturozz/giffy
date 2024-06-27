@@ -1,17 +1,18 @@
-import React, {useState } from 'react';
+import React from 'react';
 import './App.css';
-import ListOfGifts from './components/ListOfGifs';
-
+import ListOfGifs from './components/ListOfGifs';
+import { Route } from "wouter";
 export default function App(){
- const [keyword, setKeyword] = useState('panda')
+
 
   return (
     <div className="App">
       <section className="App-content">
-      <button onClick={() => setKeyword ('mapache')}
-        >cambiar keyword</button>
-       <ListOfGifts keyword={keyword} />
+       <h1>App</h1>
+       <a href='/Gif/MJ'></a>
        
+      <Route component={ListOfGifs} 
+      path="/gif/:keyword"  />
       </section>
       </div>
   )
